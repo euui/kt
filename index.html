@@ -24,14 +24,17 @@
       overflow: hidden;
     }
 
-    .app {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform-origin: 0 0;
-    }
-
-    .time {
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+   .time {
       font-family: TIME;
       margin: 1rem 0;
     }
