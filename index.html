@@ -4,76 +4,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clock For Kindle</title>
   <style>
     @font-face {
-      font-family: 'TIME';
-      src: url('time.ttf') format('truetype'), local('Arial');
+      font-family: TIME;
+      src: url("time.ttf") format("truetype");
     }
 
     * {
       margin: 0;
       padding: 0;
-      -webkit-text-size-adjust: none; /* 防止Kindle文字缩放 */
     }
 
     body {
       height: 100vh;
       width: 100%;
-      background: #f8f8f8;
-      text-align: center;
+      text-align: center;      
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
     }
 
     .app {
-      position: static;
-      transform: none;
-      width: 90%;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform-origin: 0 0;
     }
 
     .time {
-      font-family: 'TIME', monospace;
-      font-size: 3.5rem;
-      margin: 15px 0;
-      color: #333;
-      letter-spacing: 2px;
+      font-family: TIME;
+      margin: 1rem 0;
     }
 
-    .date, .cn-date {
-      font-size: 1.3rem;
-      color: #555;
+    .date {
       white-space: nowrap;
-      margin: 5px 0;
     }
 
+    .cn-date {}
     .cn-wish {
-      font-size: 1.6rem;
-      color: #333;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      max-width: 100%;
-      border-top: 2px dashed #e0e0e0;
-      border-bottom: 2px dashed #e0e0e0;
-    }
+  /*font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;*/
+  font-size:1.5em;
+  color: #333;
+  text-align: center;
+  padding: 25px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 100px auto;
+  position: relative;
+  border-left: none;
+  border-right: none;
+  border-top: 2px dashed #e0e0e0;
+  border-bottom: 2px dashed #e0e0e0;
+}
 
-    .cn-wish .name {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #e74c3c;
-      margin: 0 3px;
-    }
+.cn-wish .name {
+  font-size: 2em;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 2px;
+}
+
   </style>
 </head>
 
@@ -82,10 +74,9 @@
     <div class="date"></div>
     <div class="time"></div>
     <div class="cn-date"></div>
-    <div class="cn-wish"><span class="name">多米</span>健康快乐成长！</div>
+    <div class="cn-wish">祝<span class="name">多米</span>健康快乐成长！</div>
   </div>
 
-  <!-- 保持原有的JS引用 -->
   <script src="./calendar.min.js"></script>
   <script src="./index.min.js"></script>
 </body>
